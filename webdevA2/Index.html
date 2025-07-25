@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <h1>AI Topics</h1>
+        <button id="hamIcon">Open Menu</button>
+        <ul>
+            <li><button class="navButton" id="page1btn">Sub Topic 1</button></li>
+            <li><button class="navButton" id="page2btn">Sub Topic 2</button></li>
+            <li><button class="navButton" id="page3btn">Sub Topic 3</button></li>
+            <li><button class="navButton" id="page4btn">Sub Topic 4</button></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="images/ai.jpg" id="headerImage" alt="header image">
+        <div class="header-content flex">
+            <h1 id="headerText">Welcome to AI Topics</h1>
+            <div class="header-buttons">
+                <button id="headerButton1">🧠</button>
+                <button id="headerButton2">📜</button>
+                <button id="headerButton3">📱</button>
+                <button id="headerButton4">🧬</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex">
+        <section class="page" id="page1">
+            <div class="flex">
+                <div class="col2">
+                    test
+                </div>
+                <div class="col4">
+                    test
+                </div>
+                <div class="col4">
+                    test
+                </div>
+            </div>
+            <h2>Recent AI Innovations</h2>
+            <ul>
+                <li>
+                    <strong>Large Language Models (LLMs):</strong> Advanced models like GPT-4,
+                    Claude 3, and Gemini that can understand, generate, and translate human
+                    language with remarkable fluency.
+                </li>
+                <li>
+                    <strong>Generative AI:</strong>
+                    <ul>
+                        <li>
+                            <strong>Image Generation:</strong> Tools like Midjourney, DALL-E 3,
+                            and Stable Diffusion that create realistic or artistic images from
+                            text descriptions.
+                        </li>
+                        <li>
+                            <strong>Video Generation:</strong> Emerging models like OpenAI's
+                            Sora and RunwayML that can create video clips from text prompts.
+                        </li>
+                        <li>
+                            <strong>Code Generation:</strong> AI assistants like GitHub Copilot
+                            that write, suggest, and debug code.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Multimodal AI:</strong> Systems that can process and understand
+                    information from multiple sources at once, such as text, images, and audio
+                    (e.g., GPT-4o).
+                </li>
+                <li>
+                    <strong>AI in Scientific Discovery:</strong>
+                    <ul>
+                        <li>
+                            <strong>Protein Folding:</strong> DeepMind's AlphaFold, which
+                            accurately predicts the 3D structure of proteins, accelerating drug
+                            discovery.
+                        </li>
+                        <li>
+                            <strong>Material Science:</strong> Using AI to discover new
+                            materials with desired properties.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Autonomous Systems:</strong> Advancements in self-driving cars
+                    (e.g., Waymo), autonomous drones, and warehouse robotics.
+                </li>
+                <li>
+                    <strong>Edge AI:</strong> Running powerful AI models directly on personal
+                    devices like smartphones and laptops for improved privacy and speed.
+                </li>
+
+
+                <li>
+                    test
+                </li>
+            </ul>
+
+            <!-- User-provided elements -->
+            <button id="leftBtn">Left</button>
+            <button id="rightBtn">Right</button>
+            <button id="upBtn">Up</button>
+            <button id="downBtn">Down</button>
+            <button id="resetBtn">Reset</button>
+            <div id="ball">Ball</div>
+        </section>
+
+        <section class="page" id="page2">
+            <h2>History of AI</h2>
+            <ul>
+                <li>
+                    <strong>The Turing Test (1950):</strong> Alan Turing proposes a test for
+                    machine intelligence, a foundational concept for the field.
+                </li>
+                <li>
+                    <strong>The Dartmouth Workshop (1956):</strong> The term "Artificial
+                    Intelligence" is coined by John McCarthy, and the field is formally
+                    established.
+                </li>
+                <li>
+                    <strong>Early AI Programs (1950s-60s):</strong> Development of foundational
+                    programs like the Logic Theorist and the General Problem Solver.
+                </li>
+                <li>
+                    <strong>The "AI Winters" (1970s & late 1980s):</strong> Periods of reduced
+                    funding and interest due to overly optimistic predictions and limited
+                    computational power.
+                </li>
+                <li>
+                    <strong>Rise of Expert Systems (1980s):</strong> AI programs designed to
+                    mimic the decision-making ability of a human expert in a specific domain.
+                </li>
+                <li>
+                    <strong>Deep Blue vs. Garry Kasparov (1997):</strong> An IBM supercomputer
+                    defeats the world chess champion, a major milestone for machine
+                    intelligence.
+                </li>
+                <li>
+                    <strong>The Rise of Machine Learning (2000s):</strong> A shift from
+                    rule-based systems to systems that learn from data.
+                </li>
+                <li>
+                    <strong>The ImageNet Breakthrough (2012):</strong> A deep learning model
+                    called AlexNet dramatically outperforms all other methods in an image
+                    recognition competition, heralding the modern era of AI.
+                </li>
+                <li>
+                    <strong>The Transformer Architecture (2017):</strong> A new neural network
+                    architecture is introduced, becoming the foundation for most modern LLMs.
+                </li>
+            </ul>
+        </section>
+
+        <section class="page" id="page3">
+            <h2>Everyday Use of AI</h2>
+            <ul>
+                <li>
+                    <strong>Virtual Assistants:</strong> Siri, Google Assistant, and Alexa use
+                    natural language processing to answer questions and perform tasks.
+                </li>
+                <li>
+                    <strong>Recommendation Engines:</strong> Algorithms on Netflix, Spotify, and
+                    Amazon suggest content or products based on your past behavior.
+                </li>
+                <li>
+                    <strong>Navigation and Traffic:</strong> Apps like Google Maps and Waze use
+                    AI to analyze traffic data in real-time to find the fastest route.
+                </li>
+                <li>
+                    <strong>Spam Filters and Smart Replies:</strong> AI in email services (like
+                    Gmail) categorizes emails, blocks spam, and suggests quick responses.
+                </li>
+                <li>
+                    <strong>Social Media Feeds:</strong> Algorithms that curate content on
+                    platforms like TikTok, Instagram, and Facebook to keep users engaged.
+                </li>
+                <li>
+                    <strong>Smartphone Photography:</strong> AI-powered features that
+                    automatically enhance photos, recognize faces for focus, and enable
+                    "Portrait Mode."
+                </li>
+            </ul>
+        </section>
+
+        <section class="page" id="page4">
+            <h2>AI in Healthcare and Research</h2>
+            <ul>
+                <li>
+                    <strong>Medical Imaging Analysis:</strong> AI algorithms analyze X-rays,
+                    MRIs, and CT scans to detect signs of diseases like cancer or stroke.
+                </li>
+                <li>
+                    <strong>Drug Discovery and Development:</strong> Using AI to analyze
+                    biological data, identify potential drug candidates, and predict their
+                    effectiveness.
+                </li>
+                <li>
+                    <strong>Personalized Medicine:</strong> Creating tailored treatment plans
+                    for patients by analyzing their genetic information, lifestyle, and medical
+                    history.
+                </li>
+                <li>
+                    <strong>Robotic Surgery:</strong> AI-assisted robotic systems (like the Da
+                    Vinci Surgical System) enhance a surgeon's precision during complex
+                    operations.
+                </li>
+                <li>
+                    <strong>Predictive Analytics:</strong> Forecasting disease outbreaks,
+                    managing hospital patient flow, and identifying high-risk patients.
+                </li>
+                <li>
+                    <strong>Genomic Research:</strong> Applying AI to analyze vast amounts of
+                    genomic data to understand genetic diseases and develop new therapies.
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <img src="images/qrCode.png" alt="qr code">
+        <p>Lab 02 Dexter 244388H</p>
+    </footer>
+</body>
+
+</html>
