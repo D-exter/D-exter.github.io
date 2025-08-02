@@ -19,6 +19,8 @@ function enterFullscreen() { //must be called by user generated event
 	} else if (document.documentElement.msRequestFullscreen) { // IE/Edge
 		document.documentElement.msRequestFullscreen();
 	}
+	btnWS.style.display = "inline-block";
+	btnFS.style.display = "none";
 }
 function exitFullscreen() {
 	if (document.exitFullscreen) {
@@ -30,21 +32,10 @@ function exitFullscreen() {
 	} else if (document.msExitFullscreen) { // IE/Edge
 		document.msExitFullscreen();
 	}
+	btnFS.style.display = "inline-block";
+	btnWS.style.display = "none";
 }
 
-
-// ----------- navbar logic -----------
-// navbar scroll effect
-const navbar = document.querySelector("#navbar");
-window.addEventListener('scroll', function () {
-	// hide/show navbar
-	var currentScrollPos = window.pageYOffset;
-	if (currentScrollPos > 250) {
-		navbar.style.top = "0";
-	} else {
-		navbar.style.top = "-80px";
-	}
-});
 
 // ----------- scrolling animation logic -----------
 const elements = document.querySelectorAll('.scroll-hidden');
@@ -196,12 +187,11 @@ navbar.addEventListener("click", function (e) {
 });
 
 hideall();
-const menuItemsList = document.querySelector("#menuItemsList");
 const hamIcon = document.querySelector("#hamIcon");
 
 function closeMenu() {
 	menuItemsList.classList.remove("menuShow");
-	hamIcon.innerHTML = "Open Menu";
+	hamIcon.innerHTML = "☰";
 }
 
 function toggleMenus() {
@@ -210,10 +200,10 @@ function toggleMenus() {
 	menuItemsList.classList.toggle("menuShow");
 	//if menu is showing (has the class “menuShow”)
 	if (menuItemsList.classList.contains("menuShow")) {
-		hamIcon.innerHTML = "Close Menu"; //change button text to chose menu
+		hamIcon.innerHTML = "^"; //change button text to chose menu
 	} else {
 		//if menu NOT showing
-		hamIcon.innerHTML = "Open Menu"; //change button text open menu
+		hamIcon.innerHTML = "☰"; //change button text open menu
 	}
 }
 

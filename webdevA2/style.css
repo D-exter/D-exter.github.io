@@ -496,9 +496,9 @@ nav {
     align-items: center;
     padding: 0 2%;
     width: 100%;
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 1000;
-    top: -80px;
     transition: ease-in-out 0.1s;
 }
 
@@ -526,8 +526,37 @@ nav button {
     width: 120px;
 }
 
+nav button:hover {
+    color: lightgrey;
+    cursor: pointer;
+}
+
+#leftNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#iconNav {
+    display: flex;
+    gap: 0.5em;
+    /* space between buttons */
+    align-items: center;
+}
+
 #hamIcon {
     display: none;
+}
+
+#btnWS {
+    display: none;
+    width: auto;
+}
+
+#btnFS {
+    font-size: 30px;
+    width: auto;
 }
 
 /* cat mini game */
@@ -591,8 +620,8 @@ nav button {
     transition: transform 0.2s ease;
 }
 
-.balls:hover {
-    transform: scale(1.1);
+#qrCode {
+    max-width: 200px;
 }
 
 /* media queries */
@@ -602,6 +631,7 @@ nav button {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: stretch;
     }
 
     .navButton {
@@ -662,6 +692,7 @@ nav button {
 
     /*hide the menu item list*/
     nav ul {
+        order: 4;
         display: none;
         flex-direction: column;
         position: static;
@@ -672,9 +703,13 @@ nav button {
 
     /* unhide menu icon */
     #hamIcon {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+        width: auto;
+        /* allow natural sizing */
+        padding: 0.5em;
+        font-size: 1.5em;
+        line-height: 1;
+        cursor: pointer;
+        display: block;
     }
 
     nav a {
