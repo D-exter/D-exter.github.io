@@ -333,6 +333,13 @@ article h3 {
     justify-content: center;
 }
 
+.col2.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 /* to unhide menu items */
 .menuShow {
     display: flex;
