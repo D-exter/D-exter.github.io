@@ -12,11 +12,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="icon" type="image/png" href="images/icon-512.png">
     <link rel="manifest" href="manifest.json">
-
-
 </head>
 
 <body>
+    <!-- top navigation bar -->
     <nav id="navbar">
         <div id="leftNav">
             <a href="#">Amazing world of AI</a>
@@ -27,17 +26,18 @@
             </div>
         </div>
         <ul id="menuItemsList">
-            <li><button class="navButton" id="page1btn">Recent Innovations</button></li>
-            <li><button class="navButton" id="page2btn">The history of AI</button></li>
-            <li><button class="navButton" id="page3btn">Everyday Use of AI</button></li>
-            <li><button class="navButton" id="page4btn">Healthcare and Research</button></li>
+            <li><a href="#page1" class="navButton" id="page1btn">Recent Innovations</a></li>
+            <li><a href="#page2" class="navButton" id="page2btn">The history of AI</a></li>
+            <li><a href="#page3" class="navButton" id="page3btn">Everyday Use of AI</a></li>
+            <li><a href="#page4" class="navButton" id="page4btn">Healthcare and Research</a></li>
         </ul>
     </nav>
 
+    <!-- hero image section with page toggle -->
     <header>
         <img src="images/ai.jpg" id="headerImage" alt="header image">
         <div class="header-content flex">
-            <h1 id="headerText">Welcome to AI Topics</h1>
+            <h1 id="headerText">Welcome to amazing world of AI</h1>
             <div class="header-buttons">
                 <button id="headerButton1">🧠</button>
                 <button id="headerButton2">📜</button>
@@ -48,8 +48,11 @@
     </header>
 
     <main>
+        <!-- page 1: Recent innovations -->
         <section class="page" id="page1">
             <h2 class="scroll-hidden">Widely used AI by the public:</h2>
+
+            <!-- section on LLMs -->
             <article class="flex">
                 <div class="col2 scroll-hidden">
                     <img src="images/chatgpt.jpg" alt="AI Image">
@@ -60,6 +63,8 @@
                         language with remarkable fluency.</p>
                 </div>
             </article>
+
+            <!-- section on multimodal -->
             <article class="flex reversed">
                 <div class="col2 scroll-hidden">
                     <img src="images/geminiDemo.jpg" alt="AI Image">
@@ -71,8 +76,10 @@
                 </div>
             </article>
 
+            <!-- click section about generative ai -->
             <h2 class="scroll-hidden">Generative AI:</h2>
             <article class="flex ">
+                <!-- image gen card -->
                 <div class="col3 scroll-hidden clickCard">
                     <div class="card-header">
                         <h3>Click to Reveal AI</h3>
@@ -84,6 +91,7 @@
                         </p>
                     </div>
                 </div>
+                <!-- video gen card -->
                 <div class="col3 scroll-hidden clickCard">
                     <div class="card-header">
                         <h3>Click to Reveal AI</h3>
@@ -95,6 +103,7 @@
                         </p>
                     </div>
                 </div>
+                <!-- code gen card -->
                 <div class="col3 scroll-hidden clickCard">
                     <div class="card-header">
                         <h3>Click to Reveal AI</h3>
@@ -106,6 +115,7 @@
                     </div>
                 </div>
             </article>
+            <!-- section on more types of ai -->
             <h2 class="scroll-hidden">Other AI applications</h2>
             <article class="flex">
                 <div class="col4 scroll-hidden card">
@@ -132,8 +142,11 @@
             </article>
         </section>
 
+        <!-- page 2: The history of AI -->
         <section class="page" id="page2">
             <h2>History of AI</h2>
+
+            <!-- timeline of AI -->
             <article class="flex">
                 <div class="col2 scroll-hidden">
                     <div class="year">
@@ -251,6 +264,8 @@
             </article>
 
             <br>
+
+            <!-- quiz about ai history -->
             <article id="quizBox">
                 <h2>AI History Quiz</h2>
                 <div class="center" id="progress">Question 1 of 2</div>
@@ -265,9 +280,11 @@
             </article>
         </section>
 
+        <!-- page 3: Everyday use of AI -->
         <section class="page" id="page3">
             <h2 class="scroll-hidden">Everyday Use of AI</h2>
 
+            <!-- section on search engine ranking -->
             <article class="flex">
                 <div class="col2 scroll-hidden">
                     <img src="images/googleSearch.jpg" alt="Virtual Assistant on a smartphone">
@@ -284,6 +301,7 @@
                 </div>
             </article>
 
+            <!-- section on recommendation system -->
             <article class="flex reversed">
                 <div class="col2 scroll-hidden">
                     <img src="images/youtubeHomepage.jpg" alt="Grid of movie and music covers">
@@ -300,6 +318,7 @@
                 </div>
             </article>
 
+            <!-- section on navigation and maps -->
             <article class="flex">
                 <div class="col2 scroll-hidden">
                     <img src="images/googleMaps.jpg" alt="Smartphone showing a map and social media icons">
@@ -315,12 +334,17 @@
                     </p>
                 </div>
             </article>
+
+
+            <!-- mini game to identify real and ai images -->
             <article>
                 <br>
                 <h2>Raining cats game</h2>
                 <div class="flex" id="game">
+                    <!-- main game area -->
                     <div class="col2" id="gameScreen">
                     </div>
+                    <!-- game UI -->
                     <div class="col2" id="gameUI">
                         <div id="gameUI">
                             <h3>
@@ -337,8 +361,11 @@
 
         </section>
 
+        <!-- page 4: Healthcare and research -->
         <section class="page" id="page4">
             <h2 class="scroll-hidden">AI in Healthcare and Research</h2>
+
+            <!-- section on modern scientific use of AI -->
             <article class="flex">
                 <div class="col3 scroll-hidden card">
                     <img src="images/mri.jpg" alt="AI analyzing a medical brain scan">
@@ -364,6 +391,7 @@
                 </div>
             </article>
 
+            <!-- section on ethics and the impacts -->
             <h2 class="scroll-hidden">Ethical Considerations & The Future</h2>
             <article class="flex">
                 <div class="col2 scroll-hidden">
@@ -386,6 +414,7 @@
         </section>
     </main>
 
+    <!-- footer with qr code -->
     <footer>
         <div>
         </div>

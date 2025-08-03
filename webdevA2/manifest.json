@@ -2,7 +2,7 @@
     "name": "Amazing world of AI",
     "short_name": "AmazingAI",
     "start_url": "index.html",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#ffffff",
     "theme_color": "#00FF00",
     "icons": [

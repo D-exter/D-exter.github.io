@@ -9,7 +9,7 @@ const btnWS = document.querySelector("#btnWS");
 btnFS.addEventListener("click", enterFullscreen);
 btnWS.addEventListener("click", exitFullscreen);
 
-function enterFullscreen() { //must be called by user generated event
+function enterFullscreen() {
 	if (document.documentElement.requestFullscreen) {
 		document.documentElement.requestFullscreen();
 	} else if (document.documentElement.mozRequestFullScreen) { // Firefox
@@ -137,20 +137,17 @@ function changeContent(text, imageUrl) {
 }
 
 // ----------- page logic -----------
-//select all subtopic pages
 function hideall() {
-	//function to hide all pages
+	// go through all subtopic pages
 	for (let onepage of allpages) {
-		//go through all subtopic pages
-		onepage.style.display = "none"; //hide it
+		onepage.style.display = "none";
 	}
 }
 function show(pgno) {
-	//function to show selected page no
 	hideall();
-	//select the page based on the parameter passed in
+	// show selected page
 	let onepage = document.querySelector("#page" + pgno);
-	onepage.style.display = "block"; //show the page
+	onepage.style.display = "block";
 }
 
 
@@ -195,15 +192,12 @@ function closeMenu() {
 }
 
 function toggleMenus() {
-	/*open and close menu*/
-	//if menuItemsList dont have the class "menuShow", add it, else remove it
 	menuItemsList.classList.toggle("menuShow");
-	//if menu is showing (has the class “menuShow”)
+	// update icon
 	if (menuItemsList.classList.contains("menuShow")) {
-		hamIcon.innerHTML = "^"; //change button text to chose menu
+		hamIcon.innerHTML = "^";
 	} else {
-		//if menu NOT showing
-		hamIcon.innerHTML = "☰"; //change button text open menu
+		hamIcon.innerHTML = "☰";
 	}
 }
 
@@ -215,6 +209,7 @@ for (let card of allClickCards) {
 	const details = card.querySelector(".card-details");
 	const header = card.querySelector(".card-header");
 
+	// toggle between open and close
 	details.addEventListener("click", function () {
 		details.classList.toggle("open");
 		header.classList.toggle("open");
@@ -239,33 +234,35 @@ function spawnBall() {
 	var newDiv = document.createElement('div');
 	newDiv.className = 'balls';
 
-	// Pick a random number from 1 to 9
+	// randomize cat id
 	const randomNum = Math.floor(Math.random() * 9) + 1;
 
-	// Example: Randomly choose between AI cats or normal cats
-	const isAI = Math.random() < 0.5; // 50% chance
+	// randomize AI or normal
+	const isAI = Math.random() < 0.5;
 
-	// Assign class like "aicat3" or "cat7"
+	// add class based on id and type
 	newDiv.classList.add((isAI ? 'aicat' : 'cat') + randomNum);
 
-
+	// randomize x position spawn
 	const startX = Math.floor(Math.random() * (gameWidth - 100));
 	newDiv.style.left = startX + "px";
 	newDiv.style.top = "-100px";
 
+	// run after animation ends
 	newDiv.addEventListener("animationend", function (event) {
 		newDiv.remove();
 
-		// Check if it is AI or real cat by class name
+		// check if AI or real
 		const classes = event.target.classList;
 		let pointsChange = 0;
 
+		// check all classes to see if it contains cat and give points
 		for (const c of classes) {
-			if (c.startsWith('aicat')) { // Check if ai cat
+			if (c.startsWith('aicat')) {
 				pointsChange = 1;
 				break;
 			} else if (c.startsWith('cat')) {
-				pointsChange = -1;  // Check if real cat
+				pointsChange = -1;
 				break;
 			}
 		}
@@ -277,21 +274,23 @@ function spawnBall() {
 	gameScreen.appendChild(newDiv);
 }
 
+// cat is clicked
 gameScreen.addEventListener("click", function (e) {
 	if (e.target.classList.contains("balls")) {
-		// Remove the clicked ball
+		// remove the clicked ball
 		e.target.remove();
 
-		// Check if it is AI or real cat by class name
+		// check if AI or real
 		const classes = e.target.classList;
 		let pointsChange = 0;
 
+		// check all classes to see if it contains cat and give points
 		for (const c of classes) {
-			if (c.startsWith('aicat')) { // Check if ai cat
+			if (c.startsWith('aicat')) {
 				pointsChange = -1;
 				break;
 			} else if (c.startsWith('cat')) {
-				pointsChange = 1;  // Check if real cat
+				pointsChange = 1;
 				break;
 			}
 		}
@@ -301,16 +300,17 @@ gameScreen.addEventListener("click", function (e) {
 	}
 });
 
+// cat shaking effect
 setInterval(function () {
 	const balls = document.querySelectorAll('.balls');
 	for (let i = 0; i < balls.length; i++) {
 		const ball = balls[i];
 		const currentX = parseFloat(ball.style.left || 0);
-		// random number from -2 to 2
+		// random number to shake cat x position
 		const drift = (Math.random() - 0.5) * 4;
 		let x = currentX + drift;
 
-		// Clamp wind position
+		// prevent moving out of screen
 		if (x < 0) x = 0;
 		if (x > gameWidth - 100) x = gameWidth - 100;
 
@@ -318,22 +318,22 @@ setInterval(function () {
 	}
 }, 50);
 
+// game toggle button
 spawner.addEventListener("click", function () {
+	// toggle game auto spawn
 	if (isSpawningActive) {
-		// If spawning is active, clear the interval (stop spawning).
 		clearInterval(ballSpawnIntervalId);
-		ballSpawnIntervalId = null; // Reset the ID
-		isSpawningActive = false; // Update the state
-		spawner.innerHTML = "Start Spawning"; // Optional: Change button text to reflect new state
+		ballSpawnIntervalId = null;
+		isSpawningActive = false;
+		spawner.innerHTML = "Start Spawning";
 	} else {
-		// If spawning is not active, start the interval (resume spawning).
-		// Store the new interval ID.
 		ballSpawnIntervalId = setInterval(spawnBall, 2000);
-		isSpawningActive = true; // Update the state
-		spawner.innerHTML = "Stop Spawning"; // Optional: Change button text
+		isSpawningActive = true;
+		spawner.innerHTML = "Stop Spawning";
 	}
 });
 
+// check for width of game window
 setInterval(function () {
 	gameWidth = gameScreen.offsetWidth;
 }, 300);
@@ -346,7 +346,7 @@ var questions = [
 	"What were the Logic Theorist and General Problem Solver?",
 	"What were the 'AI Winters'?",
 	"What are expert systems designed to do?",
-	"What was significant about IBM’s Deep Blue in 1997?",
+	"What was significant about IBM's Deep Blue in 1997?",
 	"What shift occurred in AI during the 2000s?",
 	"What is AlexNet known for in 2012?",
 	"What major AI development happened in 2017?"
@@ -383,6 +383,7 @@ var shuffledQuestions = [];
 
 function shuffle(arr) {
 	const newArr = arr.slice();
+	// start from highest index
 	for (let i = newArr.length - 1; i > 0; i--) {
 		// get random index
 		const j = Math.floor(Math.random() * (i + 1));
@@ -413,10 +414,11 @@ function start() {
 	document.querySelector("#nextBtn").style.display = "none";
 	document.querySelector("#restartBtn").style.display = "none";
 
-	showQ();
+	showQuestion();
 }
 
-function showQ() {
+function showQuestion() {
+	// check if no more questions
 	if (currentQuestions >= shuffledQuestions.length) {
 		finish();
 		return;
@@ -424,6 +426,7 @@ function showQ() {
 
 	answered = false;
 
+	// get index from shuffled question index list
 	var questionIndex = shuffledQuestions[currentQuestions];
 
 	// unshuffle the question
@@ -433,20 +436,21 @@ function showQ() {
 	// shuffle options
 	var shuffledOptions = shuffle(options);
 
-	// update question number
+	// update question number text
 	document.querySelector("#progress").innerHTML = "Question " + (currentQuestions + 1) + " of " + shuffledQuestions.length;
 
-	// update question
+	// update question text
 	var questionContainer = document.querySelector("#question");
 	questionContainer.innerHTML = "";
 	var h3 = document.createElement("h3");
 	h3.innerHTML = question;
 	questionContainer.appendChild(h3);
 
-	// update options
+	// remove previous options
 	var optionsContainer = document.querySelector("#options");
 	optionsContainer.innerHTML = "";
 
+	// add new options
 	for (var i = 0; i < shuffledOptions.length; i++) {
 		var label = document.createElement("label");
 		label.className = "option";
@@ -515,10 +519,9 @@ function submitSelection() {
 	}
 }
 
-function nextQ() {
+function nextQuestion() {
 	currentQuestions = currentQuestions + 1;
-	console.log(currentQuestions);
-	showQ();
+	showQuestion();
 }
 
 function finish() {
@@ -536,6 +539,7 @@ function restart() {
 
 start();
 
+// get input
 const quizBox = document.querySelector("#quizBox");
 quizBox.addEventListener("click", function (e) {
 	let id = e.target.id;
@@ -545,7 +549,7 @@ quizBox.addEventListener("click", function (e) {
 			submitSelection();
 			break;
 		case "nextBtn":
-			nextQ();
+			nextQuestion();
 			break;
 		case "restartBtn":
 			restart();

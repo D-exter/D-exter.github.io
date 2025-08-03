@@ -13,6 +13,10 @@
     font-family: SpaceGrotesk, Arial, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* html elements */
 body {
     line-height: 1.6;
@@ -324,7 +328,7 @@ header img {
     justify-content: center;
 }
 
-/*to unhide menu items*/
+/* to unhide menu items */
 .menuShow {
     display: flex;
 }
@@ -352,6 +356,93 @@ header img {
     min-height: 200px;
 }
 
+/* navbar */
+nav {
+    background-color: rgba(0, 0, 0, 0.95);
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: ease-in-out 0.1s;
+}
+
+nav a {
+    font-weight: bold;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+nav img {
+    height: 60px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0px;
+    width: 130px;
+}
+
+nav button {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    width: 120px;
+}
+
+nav button:hover {
+    color: lightgrey;
+    cursor: pointer;
+}
+
+nav a {
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    width: 120px;
+    padding: 10px 20px;
+}
+
+nav a:hover {
+    color: lightgrey;
+    cursor: pointer;
+}
+
+#leftNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#iconNav {
+    display: flex;
+    gap: 0.5em;
+    /* space between buttons */
+    align-items: center;
+}
+
+#hamIcon {
+    display: none;
+}
+
+#btnWS {
+    display: none;
+    width: auto;
+}
+
+#btnFS {
+    font-size: 30px;
+    width: auto;
+}
+
+/* cat mini game */
 @keyframes dropping {
     from {
         transform: translateY(0px);
@@ -486,80 +577,11 @@ header img {
     background: url('images/aiCatSprites.jpg') -200px -200px;
 }
 
-
-/* navbar */
-nav {
-    background-color: rgba(0, 0, 0, 0.95);
-    min-height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2%;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: ease-in-out 0.1s;
+.balls {
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.6));
+    transition: transform 0.2s ease;
 }
 
-nav a {
-    font-weight: bold;
-    color: #fff;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-nav img {
-    height: 60px;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0px;
-    width: 130px;
-}
-
-nav button {
-    color: #fff;
-    font-size: 15px;
-    font-weight: 300;
-    width: 120px;
-}
-
-nav button:hover {
-    color: lightgrey;
-    cursor: pointer;
-}
-
-#leftNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-#iconNav {
-    display: flex;
-    gap: 0.5em;
-    /* space between buttons */
-    align-items: center;
-}
-
-#hamIcon {
-    display: none;
-}
-
-#btnWS {
-    display: none;
-    width: auto;
-}
-
-#btnFS {
-    font-size: 30px;
-    width: auto;
-}
-
-/* cat mini game */
 #game {
     background-color: white;
     height: 600px;
@@ -613,11 +635,6 @@ nav button:hover {
 #spawner:hover {
     background-color: #16a085;
     transform: scale(1.05);
-}
-
-.balls {
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.6));
-    transition: transform 0.2s ease;
 }
 
 #qrCode {
@@ -677,6 +694,11 @@ nav button:hover {
     }
 
     button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    a {
         font-size: 14px;
         padding: 8px 12px;
     }
