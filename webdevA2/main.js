@@ -262,9 +262,11 @@ function spawnBall() {
 		for (const c of classes) {
 			if (c.startsWith('aicat')) {
 				pointsChange = 1;
+				correctAudio.play();
 				break;
 			} else if (c.startsWith('cat')) {
 				pointsChange = -1;
+				incorrectAudio.play();
 				break;
 			}
 		}
@@ -290,9 +292,11 @@ gameScreen.addEventListener("click", function (e) {
 		for (const c of classes) {
 			if (c.startsWith('aicat')) {
 				pointsChange = -1;
+				incorrectAudio.cloneNode().play();
 				break;
 			} else if (c.startsWith('cat')) {
 				pointsChange = 1;
+				correctAudio.cloneNode().play();
 				break;
 			}
 		}
