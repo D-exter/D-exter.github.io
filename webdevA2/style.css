@@ -95,6 +95,11 @@ header img {
     z-index: -1;
 }
 
+article h3 {
+    width: 100%;
+    margin-top: 2vh;
+}
+
 /* classes */
 
 /* base flex */

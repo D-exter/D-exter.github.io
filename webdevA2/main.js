@@ -153,6 +153,7 @@ function show(pgno) {
 
 // navbar buttons
 var allpages = document.querySelectorAll(".page");
+var navbar = document.querySelector("#navbar");
 
 navbar.addEventListener("click", function (e) {
 	let id = e.target.id;
@@ -185,6 +186,7 @@ navbar.addEventListener("click", function (e) {
 
 hideall();
 const hamIcon = document.querySelector("#hamIcon");
+const menuItemsList = document.querySelector("#menuItemsList");
 
 function closeMenu() {
 	menuItemsList.classList.remove("menuShow");
@@ -249,11 +251,11 @@ function spawnBall() {
 	newDiv.style.top = "-100px";
 
 	// run after animation ends
-	newDiv.addEventListener("animationend", function (event) {
+	newDiv.addEventListener("animationend", function (e) {
 		newDiv.remove();
 
 		// check if AI or real
-		const classes = event.target.classList;
+		const classes = e.target.classList;
 		let pointsChange = 0;
 
 		// check all classes to see if it contains cat and give points
